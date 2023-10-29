@@ -11,7 +11,7 @@ export type Fiber = {
   // element.type，记录节点在 reconciliation 阶段的类型
   elementType: any;
 
-  // 节点类型
+  // 节点类型,class or function
   type: any;
 
   // 原生组件：字符串 'div' 'p'
@@ -20,7 +20,12 @@ export type Fiber = {
 
   // 父组件 fiber
   return: Fiber | null;
-
+  // <Com>
+  //    <Child1/>
+  //    <Child2/>  
+  // <Com/>
+  // child: child1
+  // child2 在child1的sibling上
   // 第一个子节点
   child: Fiber | null;
   // 下一个兄弟
